@@ -1,41 +1,40 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Capturar datos del formulario
+    // Recibir los datos del formulario
     $nombres = htmlspecialchars($_POST['nombres']);
     $distrito = htmlspecialchars($_POST['distrito']);
     $celular = htmlspecialchars($_POST['celular']);
     $actividad = htmlspecialchars($_POST['actividad']);
-    $monto = htmlspecialchars($_POST['monto']); // Si tiene valor.
+    $monto = htmlspecialchars($_POST['monto']);
 
-    // Configurar detalles del correo
-    $to = 'info@marakpital.com'; // Cambiar por tu correo de destino
-    $subject = 'Nueva Precalificación - Datos del Usuario';
+    // Configuración del correo
+    $to = "tucorreo@dominio.com"; // Reemplaza con tu correo
+    $subject = "Nueva solicitud de precalificación";
     $message = "
-        <html>
-        <head>
-            <title>Datos de Precalificación</title>
-        </head>
-        <body>
-            <h3>Datos de la Precalificación</h3>
-            <p><strong>Nombres:</strong> $nombres</p>
-            <p><strong>Distrito:</strong> $distrito</p>
-            <p><strong>Celular:</strong> $celular</p>
-            <p><strong>Actividad:</strong> $actividad</p>
-            <p><strong>Monto:</strong> $monto</p>
-        </body>
-        </html>
+        <h1>Detalles del formulario</h1>
+        <p><strong>Nombres:</strong> $nombres</p>
+        <p><strong>Distrito:</strong> $distrito</p>
+        <p><strong>Celular:</strong> $celular</p>
+        <p><strong>Actividad:</strong> $actividad</p>
+        <p><strong>Monto:</strong> $monto</p>
     ";
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: noreply@tu-dominio.com" . "\r\n"; // Cambiar según sea necesario.
+    $headers .= "From: no-reply@tudominio.com" . "\r\n"; // Reemplaza con un remitente válido
 
-    // Enviar correo
+    // Enviar el correo
     if (mail($to, $subject, $message, $headers)) {
-        echo "Correo enviado exitosamente.";
+        // Redirigir o mostrar mensaje de éxito
+        echo "<script>
+            alert('El correo se envió correctamente.');
+            window.location.href = 'gracias.html';
+        </script>";
     } else {
-        echo "Error al enviar el correo.";
+        // Mostrar mensaje de error
+        echo "<script>
+            alert('Hubo un error al enviar el correo. Inténtalo de nuevo.');
+            window.history.back();
+        </script>";
     }
-} else {
-    echo "Método no permitido.";
 }
 ?>
