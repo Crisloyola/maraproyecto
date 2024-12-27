@@ -42,11 +42,32 @@ var getData = function getData(el, data) {
     return el.dataset[camelize(data)];
   }
 };
+
 /* ----------------------------- Colors function ---------------------------- */
 function actualizarMonto(valor) {
-  const montoActual = document.getElementById("montoActual");
-  montoActual.textContent = `S/ ${valor}`;
+  document.getElementById("montoActual").textContent = `S/ ${valor}`;
 }
+
+function guardarMonto() {
+  const monto = document.getElementById("sliderMonto").value;
+  localStorage.setItem("montoSeleccionado", monto);
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const montoSeleccionado = localStorage.getItem("montoSeleccionado");
+  if (montoSeleccionado) {
+    // Muestra el monto en el formulario o como un input oculto
+    const montoDiv = document.createElement("div");
+    montoDiv.className = "mb-3";
+    montoDiv.innerHTML = `
+      <label for="monto" class="form-label">Monto seleccionado</label>
+      <input type="text" class="form-control" id="monto" name="monto" value="S/ ${montoSeleccionado}" readonly>
+    `;
+    document.querySelector("form").insertBefore(montoDiv, document.querySelector("form").firstChild);
+  }
+});
 
 
 var hexToRgb = function hexToRgb(hexValue) {
