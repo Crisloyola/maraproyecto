@@ -43,6 +43,10 @@ var getData = function getData(el, data) {
   }
 };
 /* ----------------------------- Colors function ---------------------------- */
+function actualizarMonto(valor) {
+  const montoActual = document.getElementById("montoActual");
+  montoActual.textContent = `S/ ${valor}`;
+}
 
 
 var hexToRgb = function hexToRgb(hexValue) {
