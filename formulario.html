@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -76,51 +78,46 @@
                   <div class="card p-4 shadow">
                       <h3 class="text-center custom-color">Paso 1 de 2</h3>
                       <h5 class="text-center">Completa tus datos para empezar tu precalificación</h5>
-                      
-                      <form action="enviar.php" method="POST">
-                          <div class="mb-3">
-                            <input type="hidden" id="monto" name="monto" value="">
-                          </div>
 
-                          <div class="mb-3">
-                              <label for="nombres" class="form-label">Nombres</label>
-                              <input type="text" class="form-control" id="nombres" name="nombres" required>
-                          </div>
-                          
-                          <div class="mb-3">
-                              <label for="distrito" class="form-label">Distrito</label>
-                              <input type="text" class="form-control" id="distrito" name="distrito" required>
-                          </div>
-                          
-                          <div class="mb-3">
-                              <label for="celular" class="form-label">Nro Celular</label>
-                              <input type="text" class="form-control" id="celular" name="celular" required>
-                              <div class="form-text text-danger">Debe contener 9 dígitos.</div>
-                          </div>
-      
-                          <div class="mb-3">
-                              <label for="actividad" class="form-label">Actividad</label>
-                              <select class="form-select" id="actividad" name="actividad" required>
-                                  <option selected>Seleccionar actividad</option>
-                                  <option value="Comercio">Comercio</option>
-                                  <option value="Servicios">Servicios</option>
-                                  <option value="Construcción">Construcción</option>
-                                  <option value="Agricultura">Agricultura</option>
-                              </select>
-                          </div>
-      
-                          <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="terminos" required>
-                              <label class="form-check-label" for="terminos">
-                                  Acepto <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>.
-                              </label>
-                          </div>
-      
-                          <div class="d-flex justify-content-between">
-                              <button type="button" class="btn btn-link"><a href="./index.html">Volver</a></button>
-                              <button type="submit" class="btn btn-custom">Enviar</button>
-                          </div>
-                      </form>
+
+                      <form action="enviar.php" method="POST">
+                        <div class="mb-3">
+                            <input type="hidden" id="monto" name="monto" value="">
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="nombres" class="form-label">Nombres</label>
+                            <input type="text" class="form-control" id="nombres" name="nombres" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="distrito" class="form-label">Distrito</label>
+                            <input type="text" class="form-control" id="distrito" name="distrito" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="celular" class="form-label">Nro Celular</label>
+                            <input type="text" class="form-control" id="celular" name="celular" required>
+                            <div class="form-text text-danger">Debe contener 9 dígitos.</div>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="actividad" class="form-label">Actividad</label>
+                            <input type="text" class="form-control" id="actividad" name="actividad" required>
+                        </div>
+                    
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="terminos" required>
+                            <label class="form-check-label" for="terminos">
+                                Acepto <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>.
+                            </label>
+                        </div>
+                    
+                        <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-link"><a href="./index.html">Volver</a></button>
+                            <input type="submit" id="submit" name="submit" class="btn btn-primary btn-lg" value="Enviar" />
+                        </div>
+                    </form>
                   </div>
               </div>
           </div>
