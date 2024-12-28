@@ -50,7 +50,7 @@
 
 
   <body>
-
+    <?php requiere_once("enviar.php");?>
     <!-- ===============================================-->
     <!--    Main Content-->
     <!-- ===============================================-->
@@ -80,11 +80,14 @@
                       <h5 class="text-center">Completa tus datos para empezar tu precalificación</h5>
 
 
-                      <form action="enviar.php" method="POST">
+                      <form action="./assets/enviar.php" method="POST">
                         <div class="mb-3">
-                            <input type="hidden" id="monto" name="monto" value="">
+                          <input type="hidden" id="monto" name="monto" value="">
                         </div>
-                    
+                        <div class="mb-3">
+                          <label for="dni" class="form-label">Dni</label>
+                          <input type="text" class="form-control" id="nombres" name="dni" required>
+                      </div>
                         <div class="mb-3">
                             <label for="nombres" class="form-label">Nombres</label>
                             <input type="text" class="form-control" id="nombres" name="nombres" required>
