@@ -48,6 +48,8 @@ function actualizarMonto(valor) {
   document.getElementById("montoActual").textContent = `S/ ${valor}`;
 }
 
+
+
 function guardarMonto() {
   const monto = document.getElementById("sliderMonto").value;
   localStorage.setItem("montoSeleccionado", monto);
@@ -64,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     montoDiv.innerHTML = `
       <label for="monto" class="form-label">Monto seleccionado</label>
       <input type="text" class="form-control" id="monto" name="monto" value="S/ ${montoSeleccionado}" readonly>
-    `;
+    `
     document.querySelector("form").insertBefore(montoDiv, document.querySelector("form").firstChild);
   }
 });

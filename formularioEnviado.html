@@ -62,11 +62,8 @@
             <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base align-items-lg-center align-items-start">
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="index.html">Requisitos</a></li>
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="index.html">Beneficios</a></li> 
-              
               <li class="nav-item px-3 px-xl-4"><a class="nav-link fw-medium" aria-current="page" href="index.html">Colaboradores</a></li>
-              
-              
-             <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="http://www.marakpital.com:2082/" target="_blank">Login</a></li>
+              <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="http://www.marakpital.com:2082/" target="_blank">Login</a></li>
               <li class="nav-item px-3 px-xl-4"><a class="btn btn-outline-dark order-1 order-lg-0 fw-medium" href="https://www.marakpital.com:2096/" target="_blank"><i class="bi bi-envelope"></i>Correo</a></li>
             </ul>
           </div>
@@ -76,59 +73,34 @@
         <div class="bg-holder" style="background-image:url(assets/img/hero/hero-bg.svg);">
         </div>
         <!--/.bg-holder-->
-        <div class="container mt-5">
+        <div class="container mt-5" id="formularioEnviado">
           <div class="row justify-content-center">
-              <div class="col-md-6">
-                  <div class="card p-4 shadow">
-                      <h3 class="text-center custom-color">Paso 1 de 2</h3>
-                      <h5 class="text-center">Completa tus datos para empezar tu precalificación</h5>
-
-                      <form action="enviar.php" method="POST">
-                          <!-- Aquí agregamos un campo para mostrar la forma de pago -->
-                          <div class="mb-3">
-                            <label for="formaPagoFormulario" class="form-label">Forma de pago</label>
-                            <input type="text" class="form-control" id="formaPagoFormulario" name="formaPago" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dni" class="form-label">DNI</label>
-                            <input type="text" class="form-control" id="dni" name="dni" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="nombres" class="form-label">Nombres</label>
-                            <input type="text" class="form-control" id="nombres" name="nombres" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="distrito" class="form-label">Distrito</label>
-                            <input type="text" class="form-control" id="distrito" name="distrito" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="celular" class="form-label">Nro Celular</label>
-                            <input type="text" class="form-control" id="celular" name="celular" required>
-                            <div class="form-text text-danger">Debe contener 9 dígitos.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="actividad" class="form-label">Actividad</label>
-                            <input type="text" class="form-control" id="actividad" name="actividad" required>
-                        </div>                
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="terminos" required>
-                            <label class="form-check-label" for="terminos">
-                                Acepto <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>.
-                            </label>
-                        </div>
-                    
-                        <div class="d-flex justify-content-between">
-                            <button type="button" class="btn btn-link"><a href="./index.html">Volver</a></button>
-                            <input type="submit" id="submit" name="submit" class="btn btn-primary btn-lg" value="Enviar">
-                        </div>
-                    </form>
-                  </div>
+            <div class="col-lg-6 text-center">
+              <!-- Título -->
+              <h1 class="fw-bold display-4">¡Gracias por tu interés!</h1>
+              <!-- Descripción -->
+              <p class="lead mb-4">Hemos recibido tu solicitud y en breve nos pondremos en contacto contigo.</p>
+              <p class="lead mb-4">Mientras tanto, puedes enviarnos un mensaje a nuestro whatsapp</p>
+              <!-- Botón de Facebook -->
+              <div class="d-flex justify-content-center mt-4">
+                <a class="btn btn-lg btn-primary" href="https://wa.link/zykkx6" target="_blank">
+                  <i class="fab fa-whatsapp me-2"></i>whatsapp
+                </a>
               </div>
+            </div>
           </div>
-      </div>
-      
-          
-      </section>
+        </div>
+        <style>
+          #formularioEnviado {
+            padding-top: 7rem;
+          }
+          .bg-holder {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+          }
+        </style>
+       </section>
 
 
 
@@ -194,15 +166,7 @@
 
 
     </main>
-    <script>
-      // Cargar la forma de pago desde el localStorage cuando la página se cargue
-      window.onload = function() {
-          var formaPago = localStorage.getItem('formaPago');
-          if (formaPago) {
-              document.getElementById('formaPagoFormulario').value = formaPago;
-          }
-      }
-  </script>
+
     <script src="vendors/@popperjs/popper.min.js"></script>
     <script src="vendors/bootstrap/bootstrap.min.js"></script>
     <script src="vendors/is/is.min.js"></script>
